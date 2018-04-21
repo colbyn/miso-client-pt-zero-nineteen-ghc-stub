@@ -21,9 +21,31 @@ description:         Please see the README on Github at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- async
+- bytestring
+- containers
+- mtl
+- stm
+- text
+- transformers
+- unordered-containers
+- vector
+- filepath
+- directory
+- unix
+- show-prettyprint
+- wl-pprint-text
+- path
+- time
+- binary
+- deepseq
+
+- ghcjs-base-stub
 
 library:
-  source-dirs: src
+  source-dirs:
+      - libs/prelude
+      - src
 
 executables:
   miso-client-pt-zero-nineteen-ghc-stub-exe:

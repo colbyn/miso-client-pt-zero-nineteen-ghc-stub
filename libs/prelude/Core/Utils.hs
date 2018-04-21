@@ -1,13 +1,16 @@
 {-# LANGUAGE NoImplicitPrelude #-}
-{-# LANGUAGE PatternSynonyms #-}
-module Lib where
+module Core.Utils (
+    todo
+  , logicError
+  , triple
+) where
 
 
 -- ~
 import Core
 import Core.Control.Flow ((|>), (<|))
-import Data.Monoid       ((<>), Monoid(..))
-import Control.Arrow     ((>>>), (<<<))
+import Core.List.Util    (flatten)
+import Data.Monoid ((<>), Monoid)
 import Prelude
     ( return
     , String
@@ -20,9 +23,7 @@ import Prelude
     , fromIntegral
     )
 
-import qualified Prelude        as Pre
-import qualified Core.Utils     as Core
-import qualified Core.List.Util as Core
+import qualified Prelude as Pre
 
 import qualified Control.Monad              as M
 import qualified Control.Monad.State        as M
@@ -52,6 +53,7 @@ import qualified Data.Vector.Unboxed.Mutable  as MV
 import qualified Data.Vector.Generic          as VG
 import qualified Data.IORef                   as IORef
 import qualified Data.ByteString              as BS
+import qualified Data.String                  as String
 
 -- + C FFI
 import qualified Foreign.C.Types as C
@@ -69,17 +71,22 @@ import qualified Control.Concurrent.Async as Async
 -- + Dev & Debugging
 import qualified Text.Show.Prettyprint as PP 
 
-
--- --------------
--- Web Specific
--- ---------------
--- import Miso.Subscription
-
-
--- --------------
--- Project Scope
--- ---------------
 -- + Local
 -- ~
+
+todo :: a
+todo = error "Not yet implemented, this is a stub (use only for development)."
+
+logicError :: String -> a
+logicError msg =
+    error $ String.unlines
+        [ "fatal logic error:"
+        , msg
+        ]
+
+
+
+triple :: a -> b -> c -> (a, b, c)
+triple x y z = (x, y, z)
 
 
