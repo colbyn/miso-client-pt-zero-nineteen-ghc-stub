@@ -39,13 +39,30 @@ dependencies:
 - time
 - binary
 - deepseq
+- aeson
 
-- ghcjs-base-stub
+- ghc-prim
+- primitive
+
+- template-haskell
+- scientific
+- integer-gmp
+- attoparsec
+- dlist >= 0.7  && < 0.9
+- hashable >= 1.2  && < 1.3
+
+- http-api-data
+- http-types
+- network-uri
+- servant
 
 library:
   source-dirs:
       - libs/prelude
-      - src
+      - src/miso-ghcjs-client
+      - src/ghcjs-base
+      - src/ghcjs-prim
+      - src/miso-shared
 
 executables:
   miso-client-pt-zero-nineteen-ghc-stub-exe:

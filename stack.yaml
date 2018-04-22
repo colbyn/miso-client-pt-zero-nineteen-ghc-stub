@@ -43,7 +43,6 @@ packages:
 extra-deps:
 - show-prettyprint-0.2.0.2
 - prettyprinter-1.2.0.1
-- ghcjs-base-stub-0.1.0.4
 
 # Override default flag values for local packages and extra-deps
 # flags: {}
