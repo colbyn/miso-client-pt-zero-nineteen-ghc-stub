@@ -1,6 +1,8 @@
 {-# LANGUAGE NoImplicitPrelude #-}
-{-# LANGUAGE PatternSynonyms #-}
-module Lib where
+module JavaScript.String
+    ( module Data.JSString
+    )
+where
 
 
 -- ~
@@ -71,9 +73,9 @@ import qualified Text.Show.Prettyprint as PP
 
 
 -- --------------
--- Web Specific
+-- Web/GHCJS Specific
 -- ---------------
--- import Miso.Subscription
+import Data.JSString
 
 
 -- --------------
@@ -81,5 +83,3 @@ import qualified Text.Show.Prettyprint as PP
 -- ---------------
 -- + Local
 -- ~
-
-
